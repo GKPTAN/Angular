@@ -1,0 +1,12 @@
+<div class="container">
+    <ul class="notas">
+        @for (nota of notas; track $index) {
+            <li>
+                <button (click)="show(nota.title)">
+                    <span class="nota-title">{{nota.title}}</span>
+                    <span class="nota-text">{{nota.text}}</span>
+                </button>
+            </li>
+        }
+    </ul>
+</div>
