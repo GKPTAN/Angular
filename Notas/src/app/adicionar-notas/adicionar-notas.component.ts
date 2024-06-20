@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NOTAS } from '../../notas';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adicionar-notas',
@@ -12,6 +13,8 @@ import { NOTAS } from '../../notas';
 })
 
 export class AdicionarNotasComponent {
+    router = inject(Router);
+
     adicionarNotaForm = new FormGroup({
       title: new FormControl('', Validators.required),
       text: new FormControl(''),
@@ -20,6 +23,7 @@ export class AdicionarNotasComponent {
     adicionarNota() {
       let title = this.adicionarNotaForm.value.title ?? '';
       let text = this.adicionarNotaForm.value.text ?? '';
+      let router = inject(Router);
 
       if (this.adicionarNotaForm.valid) {
         let ids = NOTAS.map((a) => a.id);
@@ -37,5 +41,9 @@ export class AdicionarNotasComponent {
         NOTAS.unshift(novaNota);
         this.adicionarNotaForm.reset()
       }
+
+      this.router.navigateByUrl('/');
     }
+
+
 }
