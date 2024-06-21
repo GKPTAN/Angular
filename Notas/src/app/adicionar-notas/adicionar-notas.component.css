@@ -4,6 +4,7 @@ form div {
 
 form button {
     margin-top: 10px;
+    cursor: pointer;
 }
 
 form button:disabled {

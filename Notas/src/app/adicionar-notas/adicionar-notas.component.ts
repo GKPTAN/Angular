@@ -23,7 +23,6 @@ export class AdicionarNotasComponent {
     adicionarNota() {
       let title = this.adicionarNotaForm.value.title ?? '';
       let text = this.adicionarNotaForm.value.text ?? '';
-      let router = inject(Router);
 
       if (this.adicionarNotaForm.valid) {
         let ids = NOTAS.map((a) => a.id);

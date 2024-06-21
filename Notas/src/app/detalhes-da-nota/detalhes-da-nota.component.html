@@ -1,11 +1,11 @@
 @if (nota) {
-    <div *ngif="nota" id="container-nota">
+    <div *ngIf="nota" id="container-nota">
         <span class="nota-title">{{ nota.title }}</span>
         <span class="nota-id">ID: {{ nota.id }}</span>
         <span class="nota-texto">{{ nota.text }}</span>
     </div>
 }
-<nav>
+<nav class="center">
     <button class="red" (click)="deletarNota()">Apagar nota</button>
     <button routerLink="">Voltar para a lista</button>
 </nav>
