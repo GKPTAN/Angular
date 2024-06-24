@@ -4,10 +4,9 @@ import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
-import { AppRoutingModule } from './app/app.routes';
 
 const combinedConfig = {
-  providers: [provideRouter(routes)], AppRoutingModule, appConfig
+  providers: [provideRouter(routes)], appConfig
 };
 
 bootstrapApplication(AppComponent, combinedConfig)
