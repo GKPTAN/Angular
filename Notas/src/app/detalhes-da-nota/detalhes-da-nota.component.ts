@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { NOTAS } from '../../notas';
-import { Router, RouterModule, ActivatedRoute} from '@angular/router';
+import { Router, RouterModule, ActivatedRoute, RouterLink} from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detalhes-da-nota',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, RouterLink],
   templateUrl: `./detalhes-da-nota.component.html`,
   styleUrl: './detalhes-da-nota.component.css'
 })
